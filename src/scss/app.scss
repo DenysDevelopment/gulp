@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@import "./base/vars";
+@import "./base/mixins.scss";
+.page,
+.page__body {
+  height: 100%;
+}
+
+.container {
+  max-width: $maxWidthContainer + 30 + px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.page {
+  &__body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    background: $colorBgDefault;
+    color: $colorDefault;
+    &.page__body--lock {
+      overflow: hidden;
+    }
+    &.page__body--touch
+      .menu__list
+      .menu__item.menu__item--active
+      .menu__sub-list {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0px, 0px);
+      pointer-events: all;
+      height: auto;
+      position: relative;
+    }
+    &.page__body--touch .menu__list li.menu__item--active .menu__arrow {
+      transform: rotate(-180deg);
+    }
+
+    &.page__body--touch .menu__list > .menu__item {
+      display: flex;
+      align-items: center;
+    }
+    &.page__body--touch .menu__arrow {
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 10px solid red;
+      transition: all 0.3s ease 0s;
+      margin: 0px 0px 0px 15px;
+    }
+    &.page__body--pc {
+      .menu__list > li:hover .menu__sub-list {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0px, 0px);
+        pointer-events: all;
+      }
+    }
+  }
+  &__content {
+    flex: 1;
+  }
+}
+.wrapper {
+  display: flex;
+  height: 100%;
+  flex-flow: column;
+}
+
+//========================================================================================================================================================
+
+@import "./base/ui";
+//========================================================================================================================================================
+@import "./layout/header";
+@import "./layout/footer";
+//========================================================================================================================================================
+
+//========================================================================================================================================================
