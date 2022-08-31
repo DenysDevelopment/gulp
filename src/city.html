@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  @@include('./html/layouts/head.html',{ title: "home" })
+  <body class="page__body">
+    <div class="wrapper">
+      @@include('./html/layouts/header.html', {})
+      <main class="page__content">
+        <section class="city-info">
+          <div class="container">
+            <h1 class="city-info__title"><?= $title ?></h1>
+            <div class="city-info__body">
+              <div class="city-info__donate"></div>
+              <div class="city-info__check">
+                <img src="/img/check.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('./html/layouts/footer.html', {})
+    </div>
+    @@include('./html/layouts/scripts.html', {})
+  </body>
+</html>

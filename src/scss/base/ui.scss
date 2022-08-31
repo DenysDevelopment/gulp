@@ -164,3 +164,132 @@
 // }
 // .icon-menu {
 // }
+
+//========================================================================================================================================================
+.btn {
+  font-weight: 700;
+  font-size: rem(18);
+  line-height: prc(22, 20);
+
+  padding: em(10) em(34);
+
+  background: $accentColorDefault;
+  border-radius: em(10);
+
+  color: #ffffff;
+
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      background: darken($accentColorDefault, 10%);
+    }
+  }
+}
+
+//========================================================================================================================================================
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.form {
+  width: rem(310);
+
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  &__remember {
+    align-self: start;
+    display: flex;
+    gap: rem(10);
+    &-label {
+    }
+  }
+  &__checkbox {
+    width: rem(15);
+    height: rem(15);
+  }
+
+  &__btn {
+  }
+
+  &__row {
+    position: relative;
+    width: 100%;
+  }
+  &__label {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: rem(15);
+
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: em(22);
+    color: #a0a0a0;
+    transition: all 0.3s ease 0s;
+    pointer-events: none;
+  }
+  &__input {
+    width: 100%;
+    display: block;
+
+    background: #f9faff;
+    border: 1px solid #d7d7d7;
+    box-shadow: inset 0px 0px em(9) em(1) rgba(0, 0, 0, 0.12);
+    border-radius: em(10);
+
+    padding: em(15);
+
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: em(22);
+    color: #000;
+    font-family: inherit;
+    transition: all 0.3s ease 0s;
+
+    &:not(&[value=""]) {
+      outline: none;
+      background: #fff;
+      box-shadow: none;
+      border-color: $accentColorDefault;
+    }
+    &:focus {
+      outline: none;
+      background: #fff;
+      box-shadow: none;
+      border-color: $accentColorDefault;
+    }
+    &:focus + .form__label,
+    :not(&[value=""]) + .form__label {
+      transform: translate(0, -40px);
+      font-size: rem(16);
+      background: #fff;
+      padding: 0 em(3);
+      color: $accentColorDefault;
+    }
+
+    // :not(&[value=""]) + .form__icon svg path {
+    //   fill: $accentColorDefault;
+    // }
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: rem(15);
+    svg {
+      width: rem(25);
+      height: rem(23);
+    }
+  }
+}

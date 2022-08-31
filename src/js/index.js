@@ -8,7 +8,35 @@ import { observer } from "./modules/observer.js";
 import { menu } from "./modules/menu.js";
 import { timer } from "./modules/timer.js";
 
+// import Swiper from "swiper";
+
+const swiper = new Swiper(".slider__register", {
+  pagination: {
+    el: ".slider__register .swiper-pagination",
+  },
+  parallax: {
+    enabled: false,
+  },
+  autoplay: {
+    delay: 3000,
+  },
+  speed: 900,
+  fadeEffect: {
+    crossFade: true,
+  },
+  // effect: "fade",
+  // loop: true,
+});
+
 isWebp();
+
+let inputsForm = document.querySelectorAll(".form__input");
+
+inputsForm.forEach((input) => {
+  input.addEventListener("keyup", () => {
+    input.setAttribute("value", input.value);
+  });
+});
 
 //=TIMER=======================================================================================================================================================
 //data-timer
@@ -18,11 +46,11 @@ isWebp();
 //чтобы время вывести в html в теги нужно добавить data-minute date-second
 
 // settings methods
-window.timerSettings = {
-  alert2() {
-    console.log(1);
-  },
-};
+// window.timerSettings = {
+//   alert2() {
+//     console.log(1);
+//   },
+// };
 
 //countdown date
 // data-countdown
@@ -31,7 +59,7 @@ window.timerSettings = {
 
 //чтобы время вывести в html в теги нужно добавить  date-day date-hour data-minute date-second
 
-timer();
+// timer();
 
 //here settings function
 

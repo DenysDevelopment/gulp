@@ -1,0 +1,23 @@
+.intro {
+  &__body {
+    padding-top: rem(80);
+  }
+  &__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: rem(45);
+    line-height: prc(55, 50);
+    margin-bottom: rem(50);
+  }
+  &__map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg path {
+      transition: all 0.3s ease 0s;
+    }
+    svg a:hover path:nth-child(1) {
+      fill: $accentColorDefault;
+    }
+  }
+}

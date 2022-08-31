@@ -1,11 +1,12 @@
+@use "sass:math";
 @function prc($pxOne, $pxTwo) {
-  @return #{$pxOne} / #{$pxTwo} * 100;
+  @return calc(($pxOne / $pxTwo) * 100) + #{"%"};
 }
 @function rem($px) {
-  @return #{$px} / 16 + rem;
+  @return math.div($px, 16) + rem;
 }
 @function em($px) {
-  @return #{$px} / 16 + em;
+  @return math.div($px, 16) + em;
 }
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type: 1) {
@@ -35,7 +36,6 @@
   }
 }
 
-$maxWidthContainer: 1920;
 @mixin adaptivValue($property, $startSize, $minSize, $type: 1) {
   $addSize: $startSize - $minSize;
 
